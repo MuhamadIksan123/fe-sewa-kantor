@@ -44,7 +44,7 @@ export default function BrowseOfficeWrapper() {
       <div className="grid grid-cols-3 gap-[30px]">
         {offices.map((office) => {
           return (
-            <Link key={office.id} to={'/'}>
+            <Link key={office.id} to={`/office/${office.slug}`}>
               <OfficeCard office={office} />
             </Link>
           );

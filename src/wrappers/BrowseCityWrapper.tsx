@@ -49,7 +49,7 @@ export default function BrowseCityWrapper() {
         <div className="swiper-wrapper">
           {cities.map((city) => {
             return (
-              <Link key={city.id} to={'/'}>
+              <Link key={city.id} to={`/city/${city.slug}`}>
                 <CityCard city={city} />
               </Link>
             );
