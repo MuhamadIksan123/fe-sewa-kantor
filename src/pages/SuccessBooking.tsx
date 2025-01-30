@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 
 export default function SuccessBooking() {
@@ -38,9 +38,11 @@ export default function SuccessBooking() {
           </div>
           <hr className="border-[#F6F5FD]" />
           <p className="font-semibold leading-[28px] text-center">Pesanan Anda sedang kami proses, kami akan menginformasikan status Anda melalui SMS</p>
-          <a href="view-booking-details.html" className="flex items-center justify-center w-full rounded-full p-[16px_26px] gap-3 bg-[#0D903A] font-bold text-[#F7F7FD]">
-            <span>View Booking Details</span>
-          </a>
+          <Link to={'/check-booking'}>
+            <div className="flex items-center justify-center w-full rounded-full p-[16px_26px] gap-3 bg-[#0D903A] font-bold text-[#F7F7FD]">
+              <span>View Booking Details</span>
+            </div>
+          </Link>
         </div>
       </section>
     </>
