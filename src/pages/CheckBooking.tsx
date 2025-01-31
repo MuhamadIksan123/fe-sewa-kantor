@@ -176,7 +176,7 @@ export default function CheckBooking() {
             <div className="flex flex-col h-fit shrink-0 rounded-[20px] border border-[#E0DEF7] p-[30px] gap-[30px] bg-white">
               <h2 className="font-bold">Order Details</h2>
               <div className="flex flex-col gap-5">
-                {bookingDetails.is_paid ? (
+                {!bookingDetails.is_paid ? (
                   <div className="flex items-center justify-between">
                     <p className="font-semibold">Status Pembayaran</p>
                     <p className="rounded-full w-fit p-[6px_16px] bg-[#FF852D] font-bold text-sm leading-[21px] text-[#F7F7FD]">PENDING</p>

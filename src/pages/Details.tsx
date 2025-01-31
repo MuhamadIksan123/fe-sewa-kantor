@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Office } from '../types/types';
-import axios from 'axios';
+import apiClient from '../services/apiService';
 
 export default function Details() {
   const { slug } = useParams<{ slug: string }>();
@@ -12,15 +12,9 @@ export default function Details() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  console.log(office.photos);
-
   useEffect(() => {
-    axios
-      .get(`http://127.0.0.1:8000/api/office/${slug}`, {
-        headers: {
-          'X-API-KEY': '1234',
-        },
-      })
+    apiClient
+      .get(`/office/${slug}`)
       .then((response) => {
         setOffice(response.data.data);
         setLoading(false);
@@ -163,10 +157,10 @@ export default function Details() {
             <hr className="border-[#F6F5FD]" />
             <div className="flex flex-col gap-[14px]">
               <Link to={`/office/${office.slug}/book`}>
-              <div  className="flex items-center justify-center w-full rounded-full p-[16px_26px] gap-3 bg-[#0D903A] font-bold text-[#F7F7FD]">
-                <img src="/assets/images/icons/slider-horizontal-white.svg" className="w-6 h-6" alt="icon" />
-                <span>Book This Office</span>
-              </div>
+                <div className="flex items-center justify-center w-full rounded-full p-[16px_26px] gap-3 bg-[#0D903A] font-bold text-[#F7F7FD]">
+                  <img src="/assets/images/icons/slider-horizontal-white.svg" className="w-6 h-6" alt="icon" />
+                  <span>Book This Office</span>
+                </div>
               </Link>
               <button className="flex items-center justify-center w-full rounded-full border border-[#000929] p-[16px_26px] gap-3 bg-white font-semibold">
                 <img src="/assets/images/icons/save-add.svg" className="w-6 h-6" alt="icon" />

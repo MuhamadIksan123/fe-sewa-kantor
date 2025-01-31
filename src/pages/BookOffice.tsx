@@ -29,8 +29,6 @@ export default function BookOffice() {
   const [totalAmountWithUniqueCode, setTotalAmountWithUniqueCode] = useState<number>(0);
 
   useEffect(() => {
-    console.log('Fetching office data...');
-
     axios
       .get(`http://127.0.0.1:8000/api/office/${slug}`, {
         headers: {
@@ -285,7 +283,7 @@ export default function BookOffice() {
               </div>
               <div className="flex flex-col gap-[2px]">
                 <div className="flex items-center gap-1">
-                  <p className="font-semibold">FirstOffice Angga</p>
+                  <p className="font-semibold">FirstOffice Iksan</p>
                   <img src="/assets/images/icons/verify.svg" className="w-[18px] h-[18px]" alt="icon" />
                 </div>
                 <p>8008129839</p>
@@ -297,7 +295,7 @@ export default function BookOffice() {
               </div>
               <div className="flex flex-col gap-[2px]">
                 <div className="flex items-center gap-1">
-                  <p className="font-semibold">FirstOffice Angga</p>
+                  <p className="font-semibold">FirstOffice Iksan</p>
                   <img src="/assets/images/icons/verify.svg" className="w-[18px] h-[18px]" alt="icon" />
                 </div>
                 <p>12379834983281</p>
